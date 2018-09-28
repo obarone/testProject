@@ -16,6 +16,10 @@ export class ApiService {
     return this._http.get(`${this.url}/personas/personaId/columns`);
   }
 
+  public getPersonaFields () {
+    return this._http.get(`${this.url}/personas/personaId/fields`);
+  }
+
   public updatePersona (form) {
     return this._http.put(`${this.url}/personas/personaId/`, form);
   }
