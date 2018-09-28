@@ -1,3 +1,14 @@
-<p>
-  persona-toolbar works!
-</p>
+<div id="avatar"></div>
+<div id="title-container">
+  Persona <span id="name">{{name}}</span>
+  <edit-button></edit-button>
+</div>
+<div class="tools">
+  <toolbar-button [type]="save" text="Save persona"></toolbar-button>
+  <toolbar-button [type]="add" text="Add element"></toolbar-button>
+  <toolbar-button [type]="export" text="Export"></toolbar-button>
+  <toolbar-button [type]="duplicate" text="Duplicate"></toolbar-button>
+  <toolbar-button [type]="move" text="Move"></toolbar-button>
+  <toolbar-button [type]="help" text="Help"></toolbar-button>
+  <toolbar-button [type]="more" text="More actions"></toolbar-button>
+</div>

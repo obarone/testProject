@@ -2,6 +2,9 @@
   <page-toolbar></page-toolbar>
   <persona-toolbar [name]='persona.name'></persona-toolbar>
 </div>
-<editor>
-  <persona-view></persona-view>
-</editor>
+<div class="editor">
+  <div class="persona-container">
+    <persona-view [persona]='persona'></persona-view>
+  </div>
+  <add-element-toolbar [persona]='persona'></add-element-toolbar>
+</div>

@@ -7,7 +7,7 @@ export class Field {
   next_id: number = null;
   title: string = '';
 
-  deserialize(input: any) {
+  public static deserialize(input: any) {
     Object.assign(this, input);
     return this;
   }

@@ -1,3 +1,40 @@
-<p>
-  persona-view works!
-</p>
+<div class="header">
+  <avatar style="background-color: {{persona.color}}" [type]="persona.avatar"></avatar>
+  <div class="short-text main">
+    <div class="title">Persona name</div>
+    <div class="data">
+      <input type='text' [(value)]='persona.name' (click)="clickOn('persona', $event)">
+    </div>
+  </div>
+  <div class="short-text">
+    <div class="title">Short name</div>
+    <div class="data">{{persona.initials}}</div>
+  </div>
+</div>
+<div class="content">
+  <div *ngFor="let col of persona.columns" class="col {{col.width}}" id="{{col.id}}">
+    <div class="top-position"></div>
+    <div *ngFor="let field of persona.fields">
+      <div *ngIf="field.column_id === col.id">
+        <div class="short-text" *ngIf="field.field_type === 'short_text'">
+          <div class="title" >
+            <input type='text' [value]='field.title' (click)="clickOn(field.id, $event)">
+            <div id="delete" (click)="deleteField(field.id, $event)"></div>
+          </div>
+          <div class="data">
+            <input type='text' [value]='field.data' (click)="clickOn(field.id, $event)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div *ngFor="let field of persona.fields">
+      <div *ngIf="field.column_id === col.id">
+        <div class="div class="short-text"" *ngIf="field.field_type === 'short_text'">
+          <div class="title">{{field.title}}<div id="editable"></div></div>
+          <div class="text">{{field.data}}</div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>

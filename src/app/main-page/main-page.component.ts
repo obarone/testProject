@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api/api.service';
 
 import { Persona } from '../../models/persona.model';
+import { Field } from '../../models/field.model';
+import { Column } from '../../models/column.model';
+
 @Component({
   selector: 'main-page',
   templateUrl: './main-page.component.html',
@@ -10,20 +13,19 @@ import { Persona } from '../../models/persona.model';
 export class MainPageComponent implements OnInit {
 
   // @TODO: make persona a Model;
-  persona: Persona = new Persona;
+  persona: any = new Persona;
   constructor(private _api: ApiService) { }
 
   ngOnInit() {
-    console.log(this.persona);
-    // this._api.getPersona().subscribe(success => {
-    //   this.persona = success;
-    //   this._api.getPersonaColumns().subscribe(success => {
-    //     this.persona.columns = success;
-    //     this._api.getPersonaFields().subscribe(success => {
-    //       this.persona.fields = success;
-    //     });
-    //   });
-    // });
+    this._api.getPersona().subscribe(persona => {
+      this._api.getPersonaColumns().subscribe(columns => {
+        this._api.getPersonaFields().subscribe(fields => {
+          this.persona = persona;
+          this.persona.columns = columns;
+          this.persona.fields = fields;
+        });
+      });
+    });
   }
 
 }

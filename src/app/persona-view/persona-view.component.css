@@ -1,0 +1,76 @@
+:host {
+  margin-top: 40px;
+  margin-left: 120px;
+  width: 664px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: #DCDCDC;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.header > * {
+  flex-grow: 0;
+}
+
+.header > .main {
+  flex-grow: 1
+}
+
+.content {
+  background: #F0F0F0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.col.wide {
+  width: 448px;
+}
+
+.col.thin {
+  width: 232px;
+}
+
+.short-text {
+  background: #FFFFFF;
+  display: block;
+  margin: 16px;
+}
+
+.short-text > .title, .short-text > .data {
+  margin: 8px 12px;
+}
+
+#delete {
+  float: right;
+  display: block;
+  height: 15px;
+  width: 15px;
+  background: #000000;
+}
+
+.short-text > .title, .short-text > .title > input {
+  color: #B1B6B6;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weigth: bold;
+}
+
+.short-text > * > input {
+  background: none;
+  border: 0;
+  width: 70%;
+}
+
+.short-text > .data, .short-text > .data > input {
+  color: #3C4646;
+  font-size: 16px;
+  line-heigth: 22px;
+  font-weigth: normal;
+}

@@ -7,10 +7,10 @@ export class Persona {
   color: string = '';
   initials: string = '';
   name: string = '';
-  fields: [Field] = [];
-  columns: [Column] = [];
+  fields: Array<Field> = [];
+  columns: Array<Column> = [];
 
-  deserialize(input: any) {
+  public static deserialize(input: any) {
     Object.assign(this, input);
     return this;
   }

@@ -30,11 +30,11 @@ export class ApiService {
 
   public updatePersonaField (fieldId, form) {
     return this._http
-      .put(`${this.url}/personas/personaId/fields/${field}`, form);
+      .put(`${this.url}/personas/personaId/fields/${fieldId}`, form);
   }
 
   public deletePersonaField (fieldId) {
     return this._http
-      .delete(`${this.url}/personas/personaId/fields/${field}`);
+      .delete(`${this.url}/personas/personaId/fields/${fieldId}`);
   }
 }

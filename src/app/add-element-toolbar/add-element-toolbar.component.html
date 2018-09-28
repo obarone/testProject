@@ -1,0 +1,13 @@
+<div class="title"> Add element</div>
+
+<add-element-button type="short-text" text="Short text" ngDraggable
+  (started)="startMoving('short-text',$event)"
+  (endOffset)="stopMoving($event)"
+  (movingOffset)="onMoving($event)"
+  [trackPosition]="false"
+  >
+</add-element-button>
+<add-element-button type="long-text" text="long text"></add-element-button>
+<add-element-button type="image" text="Image"></add-element-button>
+<add-element-button type="gallery" text="Image Gallery"></add-element-button>
+<add-element-button type="number" text="number"></add-element-button>
