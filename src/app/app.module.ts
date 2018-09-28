@@ -1,14 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
+;
+import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
+import { BrowserModule }    from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
+// services
+import { ApiService } form '../services/api/api.service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
